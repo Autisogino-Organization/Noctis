@@ -1,7 +1,6 @@
 import bcrypt
 
 
-
 def verify_password(password:str, hashed_password:str):
     """
     Transforma ambas contraseñas en formato de bytes
@@ -12,4 +11,8 @@ def verify_password(password:str, hashed_password:str):
     is_valid = bcrypt.checkpw(password_bytes,hashed_bytes)
     return is_valid
 
+def hash_password(password : str):
 
+    salt = bcrypt.gensalt()
+    hashed_password = bcrypt.hashpw(password.encode , salt)
+    return hashed_password.decode()

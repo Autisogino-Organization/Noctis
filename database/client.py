@@ -1,6 +1,8 @@
 from config import SECRET_DATABASE_KEY
 from supabase import create_client
 from utils.security import verify_password
+from register.register_schema import CreateUser
+from utils.security import hash_password 
 
 SUPABASE_URL = "https://iqnyabathkjaqzqommeh.supabase.co"
 SUPABASE_KEY = SECRET_DATABASE_KEY
@@ -14,4 +16,5 @@ def login_user(user_email:str, password:str):
         store_hashed = response.data[0]["hashed_password"]
         return verify_password(password,store_hashed)
     else:
-        return False
+        return False 
+
