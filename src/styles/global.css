@@ -18,3 +18,38 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+body,
+.custom-scrollbar {
+  --sb-track-color: #3f3f3f00;
+  --sb-thumb-color: #101010;
+  --sb-size: 10px;
+}
+
+body::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track,
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb,
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4f4f4f;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body,
+  .custom-scrollbar {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
