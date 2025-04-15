@@ -1,16 +1,14 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-// Import your page components
-import LandingHome from "../pages/landing/pages/Landing";
-import Chat from "../pages/chats/pages/ChatPage";
-// Import other pages as needed
+import LandingHome from "@/pages/landing/pages/Landing";
+import ChatPage from "@/pages/channels/@me/index";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingHome />} />
-        <Route path="/chat" element={<Chat />} />
+        <Route path="/channels" element={<ChatPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
