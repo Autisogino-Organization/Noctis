@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-day-primary: #ffffff;
+  --color-day-secondary: #3b6fff;
+  --color-day-tertiary: #000000;
+  --color-day-quaternary: #ffffff;
+
+  --color-night-primary: #0f0f0f;
+  --color-night-secondary: #3b6fff;
+  --color-night-tertiary: #000000;
+  --color-night-quaternary: #ffffff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
